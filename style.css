@@ -1,0 +1,68 @@
+:root {
+    --accent: #00f2ea;
+    --bg: #000000;
+}
+
+body {
+    margin: 0; padding: 0; background: var(--bg);
+    color: #fff; font-family: 'Inter', sans-serif;
+    height: 100vh; display: flex; justify-content: center; align-items: center;
+    overflow: hidden; perspective: 1000px;
+}
+
+#enter-screen {
+    position: fixed; inset: 0; background: #000; z-index: 999;
+    display: flex; justify-content: center; align-items: center;
+    cursor: pointer; transition: 1s; font-weight: bold; letter-spacing: 2px;
+}
+
+#enter-screen.fade-out { opacity: 0; visibility: hidden; }
+
+.card {
+    width: 620px; background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(0, 242, 234, 0.2); border-radius: 20px;
+    padding: 30px; display: none; align-items: center; gap: 30px;
+    box-shadow: 0 0 25px rgba(0, 242, 234, 0.05); position: relative;
+}
+
+.profile-img {
+    width: 140px; height: 140px; border-radius: 20px;
+    border: 2px solid var(--accent);
+    box-shadow: 0 0 20px var(--accent); /* Neon Parlama */
+}
+
+.username { 
+    font-size: 2rem; font-family: 'Poppins'; display: inline-block;
+    margin: 0;
+}
+
+.badges { display: inline-flex; gap: 8px; margin-left: 10px; align-items: center; }
+.badge-icon { width: 18px; height: 18px; filter: drop-shadow(0 0 3px var(--accent)); }
+
+.bio-text { color: rgba(255,255,255,0.8); font-size: 0.95rem; }
+
+.music-card {
+    background: rgba(0,0,0,0.6); border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px; padding: 12px; margin: 15px 0;
+    display: flex; justify-content: space-between; align-items: center;
+}
+
+.music-left { display: flex; align-items: center; gap: 12px; }
+.album-art { width: 40px; height: 40px; border-radius: 8px; border: 1px solid var(--accent); }
+.song-title { font-size: 0.85rem; font-weight: 600; }
+.artist-name { font-size: 0.75rem; color: var(--accent); }
+
+.social-links { display: flex; gap: 10px; margin-top: 15px; }
+.social-btn {
+    width: 38px; height: 38px; background: rgba(255,255,255,0.05);
+    border-radius: 8px; display: flex; align-items: center; justify-content: center;
+    border: 1px solid rgba(255,255,255,0.1); transition: 0.3s; color: #fff;
+}
+
+.footer-stats {
+    position: absolute; bottom: 15px; left: 30px; right: 30px;
+    display: flex; justify-content: space-between; font-size: 0.7rem; color: rgba(255,255,255,0.5);
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+.album-art.playing { animation: spin 5s linear infinite; }  
